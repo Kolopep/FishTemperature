@@ -1,0 +1,42 @@
+﻿<Page x:Class="FishController.FishData"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FishController"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FishData">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock Text="Вид рыбы" TextAlignment="Center"/>
+            <TextBox x:Name="TBFishType" Margin="5"/>
+            <TextBlock Text="Максимально допустимая температура хранения" TextAlignment="Center"/>
+            <TextBox x:Name="TBMaxTemperature" Margin="5"/>
+            <TextBlock Text="Допустимое время повышенной температуры"  TextAlignment="Center"/>
+            <TextBox x:Name="TBMaxExcessTemperature" Margin="5"/>
+            <TextBlock Text="Минимальная допустимая температура хранения" TextAlignment="Center"/>
+            <TextBox x:Name="TBMinTemperature" Margin="5"/>
+            <TextBlock Text="Допустимое время пониженной температуры"  TextAlignment="Center"/>
+            <TextBox x:Name="TBMinExcessTemperature" Margin="5"/>
+            <Button x:Name="BSubmit" Margin="5" Click="BSubmit_Click">Отправить</Button>
+        </StackPanel>
+            <ScrollViewer>
+        <StackPanel>
+                
+            <TextBlock Text="Температура" TextAlignment="Center"/>
+            <TextBox x:Name="TBTemperatureArray" Margin="5"/>
+            <TextBlock Text="Время (1/19/2016 11:48:09 AM)" TextAlignment="Center"/>
+            <TextBox x:Name="TBDateArray" Margin="5"/>
+            <Button x:Name="BAddTemperatur" Margin="5" Click="BAddTemperatur_Click">Add</Button>
+            <TextBlock x:Name="TBInfoTemperatureArray"/>
+        </StackPanel>
+            </ScrollViewer>
+    </Grid>
+</Page>

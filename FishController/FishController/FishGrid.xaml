@@ -1,0 +1,38 @@
+﻿<Page x:Class="FishController.FishGrid"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FishController"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FishGrid">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Text="Вид рыбы: " x:Name="TBFishType"/>
+            <TextBlock Text="Max Temperature: " x:Name="TBMaxTemperature"/>
+            <TextBlock Text="Min Temperature: " x:Name="TBMinTemperature"/>
+            <TextBlock Text="Дата: " x:Name="TBDate"/>
+            <TextBlock Text="Температура: " x:Name="TBTemperatureArray"/>
+        </StackPanel>
+        <DataGrid IsReadOnly="True" AutoGenerateColumns="False" x:Name="DGFishData" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="3" Margin="5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="auto" Header="Время" Binding="{Binding Date}"></DataGridTextColumn>
+                <DataGridTextColumn Width="auto" Header="Факт" Binding="{Binding Fact}"></DataGridTextColumn>
+                <DataGridTextColumn Width="auto" Header="Норма" Binding="{Binding Normal}"></DataGridTextColumn>
+                <DataGridTextColumn Width="auto" Header="Отклонение от нормы" Binding="{Binding Deviation}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>
